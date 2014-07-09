@@ -289,6 +289,12 @@ var albumPicasso = {
     ]
 };
 
+// Shuffle function
+function shuffle(o){ //v1.0
+    for(var j, x, i = o.length; i; j = Math.floor(Math.random() * i), x = o[--i], o[i] = o[j], o[j] = x);
+    return o;
+};
+
 blocJams = angular.module('BlocJams', ['ui.router']);
 
 blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
@@ -331,9 +337,14 @@ blocJams.controller('Landing.controller', ['$scope', function($scope) {
     '/images/album-placeholders/album-8.jpg',
     '/images/album-placeholders/album-9.jpg',
   ];
+
+  $scope.moveImage = function() {
+    shuffle($scope.albumURLs);
+  }
+
 }]);
 
-blocJams.controller('Collection.controller', ['$scope', function($scope) {
+blocJams.controller('Collection.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {
   $scope.albums = [];
 
   for (var i = 0; i < 33; i++) {
