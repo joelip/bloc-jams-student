@@ -317,6 +317,12 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
     templateUrl: '/templates/album.html',
     controller: 'Album.controller'
   });
+
+  $stateProvider.state('profile', {
+    url: '/profile',
+    templateUrl: '/templates/profile.html',
+    controller: 'Profile.controller'
+  });
 }]);
 
 blocJams.controller('Landing.controller', ['$scope', function($scope) {
@@ -342,6 +348,16 @@ blocJams.controller('Landing.controller', ['$scope', function($scope) {
     shuffle($scope.albumURLs);
   }
 
+}]);
+
+blocJams.controller('Profile.controller', ['$scope', function($scope) {
+  $scope.tabName = 'yourAccount';
+  $scope.isTabVisible = function(tabName) {
+    return $scope.tabName == tabName;
+  };
+  $scope.switchTab = function(tabName) {
+    $scope.tabName = tabName;
+  };
 }]);
 
 blocJams.controller('Collection.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {
