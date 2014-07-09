@@ -1,3 +1,4 @@
+@import "chardinjs";
 @import "landing";
 @import "album";
 @import "collection";
@@ -42,6 +43,19 @@ body.landing .navbar {
       &:hover {
          color: rgba(123, 70, 163, .9);
       }
+    }
+  }
+  .chardin-container {
+    position: relative;
+    width: 100%;
+    .start-chardin {
+      font-family: 'Open Sans', sans-serif;
+      position: absolute;
+      top: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      -webkit-transform: translateX(-50%);
+      
     }
   }
 }

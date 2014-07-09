@@ -1,5 +1,50 @@
+<nav class="player-header-nav navbar">
+  <div class="container">
+    <div class='navbar-header'> <!-- Nav Bar -->
+      <a class='logo navbar-left' ui-sref="landing">
+        <img src="/images/blocjams.png">
+      </a>
+    </div>
+    <div class="chardin-container">
+      <a class="btn btn-default start-chardin" toggle-chardin>
+        What can I do on this page?
+      </a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a ui-sref='collection'>Library</a></li>
+      <li><a ui-sref='profile'>Profile</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="collection-container container">
   <div class="row"> <!-- Album Header -->
+    <div class="collection-album-container col-md-2"  data-intro="Hover over one of these albums and click the play button to start playing music." data-position="right">
+      <div ng-mouseenter="showIntroOverlay = true" ng-mouseleave="showIntroOverlay = false" class="collection-album-image-container">
+        <img ng-src="{{ albums[0].albumArtUrl }}">
+        <div class="collection-album-image-overlay" ng-show="showIntroOverlay">
+          <div class="collection-overlay-content">
+            <a class="collection-overlay-button" ng-click="playAlbum(albums[0])">
+              <i class="fa fa-play"></i>
+            </a>
+            &nbsp;
+            <a class="collection-overlay-button">
+              <i class="fa fa-plus"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="collection-album-info caption">
+        <p>
+        <a class="album-name" ui-sref="album" data-intro="Click on one of the Album names to be taken to the separate album page." data-position="bottom"> {{ albums[0].name }} </a>
+          <br/>
+          <a ui-sref="album"> {{ albums[0].artist }} </a>
+          <br/>
+          {{ albums[0].songs.length }} songs
+          <br/>
+        </p>
+      </div>
+    </div>
     <div ng-repeat="album in albums" class="collection-album-container col-md-2">
       <div ng-mouseenter="showOverlay = true" ng-mouseleave="showOverlay = false" class="collection-album-image-container">
         <img ng-src="{{ album.albumArtUrl }}">

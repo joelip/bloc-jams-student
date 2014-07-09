@@ -1,6 +1,25 @@
+<nav class="player-header-nav navbar">
+  <div class="container">
+    <div class='navbar-header'> <!-- Nav Bar -->
+      <a class='logo navbar-left' ui-sref="landing">
+        <img src="/images/blocjams.png">
+      </a>
+    </div>
+    <div class="chardin-container">
+      <a class="btn btn-default start-chardin" toggle-chardin>
+        What can I do on this page?
+      </a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a ui-sref='collection'>Library</a></li>
+      <li><a ui-sref='profile'>Profile</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class="container">
   <div class="user-profile-tabs-container">
-    <ul class="profile-pagination pagination tabs">
+    <ul class="profile-pagination pagination tabs" data-intro="Navigate between the tabs." data-position="bottom">
       <li class='tab' ng-class="{'active': isTabVisible('yourAccount')}" style="cursor: pointer">
         <a ng-click="switchTab('yourAccount')">Your Account</a>
       </li>

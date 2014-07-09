@@ -1,3 +1,22 @@
+<nav class="player-header-nav navbar">
+  <div class="container">
+    <div class='navbar-header'> <!-- Nav Bar -->
+      <a class='logo navbar-left' ui-sref="landing">
+        <img src="/images/blocjams.png">
+      </a>
+    </div>
+    <div class="chardin-container">
+      <a class="btn btn-default start-chardin" toggle-chardin>
+        What can I do on this page?
+      </a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a ui-sref='collection'>Library</a></li>
+      <li><a ui-sref='profile'>Profile</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class='album-container container'>
   <div class='album-header-container row'> <!-- Album Header -->
     <div class='col-md-3'> <!-- Album Image -->
@@ -13,6 +32,27 @@
 
   <div class='row'> <!-- Song table -->
     <table class='album-song-listing table'>
+    <tr ng-mouseenter="onHoverSong(firstSong)" ng-mouseleave="offHoverSong(firstSong)">
+        <td class="song-number col-md-1" data-intro="Play and pause individual songs." data-position="right">
+          <span ng-switch="getSongState(firstSong)">
+            <span ng-switch-when="playing">
+              <a class="album-song-button" ng-click="pauseSong(firstSong)">
+                <i class="fa fa-pause"></i>
+              </a>
+            </span>
+            <span ng-switch-when="hovered">
+              <a class="album-song-button" ng-click="playSong(firstSong)">
+                <i class="fa fa-play"></i>
+              </a>
+            </span>
+            <span ng-switch-default>
+              1
+            </span>
+          </span>
+        <td>
+        <td class="col-md-9"> {{ firstSong.name }} </td>
+        <td class="col-md-2"> {{ firstSong.length | timecode }} </td>
+      </tr>
       <tr ng-repeat="song in album.songs"  ng-mouseenter="onHoverSong(song)" ng-mouseleave="offHoverSong(song)">
         <td class="song-number col-md-1">
           <span ng-switch="getSongState(song)">
@@ -27,7 +67,7 @@
               </a>
             </span>
             <span ng-switch-default>
-              {{ $index + 1 }}
+              {{ $index + 2 }}
             </span>
           </span>
         <td>

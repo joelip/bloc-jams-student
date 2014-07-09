@@ -295,6 +295,11 @@ function shuffle(o){ //v1.0
     return o;
 };
 
+$('a[data-toggle="chardinjs"]').on('click', function(e) {
+  e.preventDefault();
+  ($('body').data('chardinJs')).toggle();
+});
+
 blocJams = angular.module('BlocJams', ['ui.router']);
 
 blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
@@ -325,7 +330,21 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
   });
 }]);
 
+blocJams.directive('toggleChardin', function() {
+  return {
+    restrict: 'A',
+    link: function(scope, element, attrs) {
+
+      element.on('click', function() {
+        $('body').chardinJs('toggle');
+      });
+
+    }
+  }
+});
+
 blocJams.controller('Landing.controller', ['$scope', function($scope) {
+
   $scope.subText = "Turn the music up!";
  
   $scope.subTextClicked = function() {
@@ -361,6 +380,7 @@ blocJams.controller('Profile.controller', ['$scope', function($scope) {
 }]);
 
 blocJams.controller('Collection.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {
+  
   $scope.albums = [];
 
   for (var i = 0; i < 33; i++) {
@@ -373,7 +393,11 @@ blocJams.controller('Collection.controller', ['$scope', 'SongPlayer', function($
 }]);
 
 blocJams.controller('Album.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {
-  $scope.album = angular.copy(albumPicasso);
+  album = angular.copy(albumPicasso);
+  album.songs.splice(0, 1);
+  $scope.album = album;
+
+  $scope.firstSong = albumPicasso.songs[0];
 
   var hoveredSong = null;
   var playingSong = null;

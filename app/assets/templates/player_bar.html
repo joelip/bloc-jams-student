@@ -1,6 +1,6 @@
 <div ng-controller="PlayerBar.controller" class='player-bar'>
   <div class='container'>
-    <div class='play-controls player-bar-control-group left-controls'>
+    <div class='play-controls player-bar-control-group left-controls' data-intro="Once a song is playing, start, stop or skip between songs using these controls." data-position="top">
       <a class='previous' ng-click="songPlayer.previous()">
         <i class='fa fa-backward'></i>
       </a>
@@ -12,7 +12,7 @@
         <i class='fa fa-forward'></i>
       </a>
     </div>
-    <div class='currently-playing player-bar-control-group'>
+    <div class='currently-playing player-bar-control-group' data-intro="Drag this slider to navigate to a specific position in the song." data-position="top">
       <h2 class='song-name'> {{ songPlayer.currentSong.name }} </h2>
       <div class='seek-control'>
         <slider value='{{playTime}}' max='{{songPlayer.currentSong.length}}' on-change='songPlayer.seek(value)'></slider>
@@ -21,8 +21,8 @@
       </div>
       <h3 class='artist-name'> {{ songPlayer.currentAlbum.artist }} </h3>
     </div>
-    <div class='right-controls player-bar-control-group'>
-      <div class='volume' >
+    <div class='right-controls player-bar-control-group' data-intro="Even control the volume!" data-position="top">
+      <div class='volume'>
         <i class='fa fa-volume-up'></i>
         <slider></slider>
       </div>

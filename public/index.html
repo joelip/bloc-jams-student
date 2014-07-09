@@ -11,25 +11,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/buzz/1.1.0/buzz.min.js"></script>
+    <script src="/javascripts/chardinjs.min.js"></script>
     <script src="/javascripts/app.js"></script>
     <script>
       require('scripts/app');
     </script>
   </head>
   <body>
-    <nav class="player-header-nav navbar">
-      <div class="container">
-        <div class='navbar-header'> <!-- Nav Bar -->
-          <a ui-sref='landing' class='logo navbar-left'>
-            <img src="/images/blocjams.png">
-          </a>
-        </div>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a ui-sref='collection'>Library</a></li>
-          <li><a ui-sref='profile'>Profile</a></li>
-        </ul>
-      </div>
-    </nav>
     <div ui-view></div>
   </body> 
 </html>

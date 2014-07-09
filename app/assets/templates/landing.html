@@ -1,7 +1,26 @@
+<nav class="player-header-nav navbar">
+  <div class="container">
+    <div class='navbar-header'> <!-- Nav Bar -->
+      <a class='logo navbar-left' ui-sref="landing" data-intro="Navigate back to home by clicking the album image." data-position="right">
+        <img src="/images/blocjams.png">
+      </a>
+    </div>
+    <div class="chardin-container">
+      <a class="btn btn-default start-chardin" toggle-chardin>
+        What can I do on this page?
+      </a>
+    </div>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a ui-sref='collection' data-intro="Visit our album collection page where you can play music." data-position="left">Library</a></li>
+      <li><a ui-sref='profile' data-intro="Visit the user profile page to see how we implement JavaScript tabs." data-position="bottom">Profile</a></li>
+    </ul>
+  </div>
+</nav>
+
 <div class='hero-content'> <!-- Hero content -->
   <div class='container'>
     <h1> Bloc Jams </h1>
-    <h3 ng_click="subTextClicked()"> {{ subText }} </h3>
+    <h3 ng-click="subTextClicked()" data-intro="Add some exclamation points to our subtitle by clicking here." data-position="bottom" style="width: auto; cursor: pointer"> {{ subText }} </h3>
   </div>
 </div>
 
@@ -23,9 +42,9 @@
 </div>
 
 <div class="landing-album-list container">
-  <div class="row">
-    <div class="col-md-4" ng-repeat="albumURL in albumURLs">
-      <img  ng-src="{{albumURL}}">
+  <div class="row" data-intro="Shuffle the albums images by clicking any of them." data-position="top">
+    <div class="col-md-4" ng-repeat="albumURL in albumURLs" ng-click="moveImage()">
+      <img ng-src="{{albumURL}}">
     </div>
   </div>
 </div>
