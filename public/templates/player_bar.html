@@ -1,10 +1,10 @@
 <div ng-controller="PlayerBar.controller" class='player-bar'>
   <div class='container'>
-    <div class='play-controls player-bar-control-group left-controls' data-intro="Once a song is playing, start, stop or skip between songs using these controls." data-position="top">
+    <div class='play-controls player-bar-control-group left-controls'>
       <a class='previous' ng-click="songPlayer.previous()">
         <i class='fa fa-backward'></i>
       </a>
-      <a class='play-pause'>
+      <a class='play-pause' data-intro="Once a song is playing, start, stop or skip between songs using these controls." data-position="right">
         <i class='fa fa-play' ng-show="!songPlayer.playing" ng-click="songPlayer.play()"></i>
         <i class='fa fa-pause' ng-show="songPlayer.playing" ng-click="songPlayer.pause()"></i>
       </a>
@@ -23,8 +23,8 @@
     </div>
     <div class='right-controls player-bar-control-group' data-intro="Even control the volume!" data-position="top">
       <div class='volume'>
-        <i class='fa' ng-class='volumeClass()' ></i>
-        <slider value='{{songPlayer.volume}}' max='100' on-change='songPlayer.setVolume(value)'></slider>
+        <i class='fa fa-volume-up'></i>
+        <slider></slider>
       </div>
       <div class='queue-toggle'>
         <a>
