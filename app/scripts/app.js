@@ -83,15 +83,27 @@ blocJams.controller('Landing.controller', ['$scope', function($scope) {
   };
 
   $scope.albumURLs = [
-    '/images/album-placeholders/album-1.jpg',
-    '/images/album-placeholders/album-2.jpg',
-    '/images/album-placeholders/album-3.jpg',
-    '/images/album-placeholders/album-4.jpg',
-    '/images/album-placeholders/album-5.jpg',
-    '/images/album-placeholders/album-6.jpg',
-    '/images/album-placeholders/album-7.jpg',
-    '/images/album-placeholders/album-8.jpg',
-    '/images/album-placeholders/album-9.jpg',
+    '/images/album-placeholders/album-01.png',
+    '/images/album-placeholders/album-02.png',
+    '/images/album-placeholders/album-03.png',
+    '/images/album-placeholders/album-04.png',
+    '/images/album-placeholders/album-05.png',
+    '/images/album-placeholders/album-06.png',
+    '/images/album-placeholders/album-07.png',
+    '/images/album-placeholders/album-08.png',
+    '/images/album-placeholders/album-09.png',
+    '/images/album-placeholders/album-10.png',
+    '/images/album-placeholders/album-11.png',
+    '/images/album-placeholders/album-12.png',
+    '/images/album-placeholders/album-13.png',
+    '/images/album-placeholders/album-14.png',
+    '/images/album-placeholders/album-15.png',
+    '/images/album-placeholders/album-16.png',
+    '/images/album-placeholders/album-17.png',
+    '/images/album-placeholders/album-18.png',
+    '/images/album-placeholders/album-19.png',
+    '/images/album-placeholders/album-20.png',
+    '/images/album-placeholders/album-21.png'
   ];
 
   $scope.moveImage = function() {
