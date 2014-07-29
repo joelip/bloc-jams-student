@@ -4,10 +4,10 @@ module.exports = function(config) {
   config.set({
 
     // base path, that will be used to resolve files and exclude
-    basePath: '../',
+    basePath: '..',
 
     // frameworks to use
-    frameworks: ['mocha', 'chai'],
+    frameworks: ['jasmine'],
 
     // list of files / patterns to load in the browser
     files: [
@@ -23,13 +23,13 @@ module.exports = function(config) {
       // Specs
       'bower_components/angular-mocks/angular-mocks.js',
 
-      'test/unit/**/*.spec.js'
+      'test/unit/*.spec.js'
     ],
 
 
     // list of files to exclude
-    exclude: [
-    ],
+    // exclude: [
+    // ],
 
 
     // test results reporter to use
@@ -54,10 +54,6 @@ module.exports = function(config) {
     logLevel: config.LOG_INFO,
 
 
-    // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
-
-
     // Start these browsers, currently available:
     // - Chrome
     // - ChromeCanary
@@ -75,15 +71,9 @@ module.exports = function(config) {
 
     // Plugins to load
     plugins: [
-      'karma-mocha',
-      'karma-chai',
+      'karma-jasmine',
       'karma-growl-reporter',
       'karma-chrome-launcher'
-    ],
-
-
-    // Continuous Integration mode
-    // if true, it capture browsers, run tests and exit
-    singleRun: false
+    ]
   });
 };
